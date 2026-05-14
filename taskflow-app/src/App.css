@@ -1,0 +1,281 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f0f2f5;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 700px;
+  margin: 60px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a1a2e;
+  margin-bottom: 24px;
+}
+
+/* 입력 폼 */
+.form-box {
+  background: #f8f9fc;
+  border: 1.5px solid #e8eaf0;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-box input[type='text'] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-box input[type='text']:focus {
+  border-color: #4f46e5;
+}
+
+.date-row {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.date-row label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  color: #666;
+  font-weight: 600;
+}
+
+.date-row input[type='datetime-local'] {
+  padding: 7px 10px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.date-row input[type='datetime-local']:focus {
+  border-color: #4f46e5;
+}
+
+.duration {
+  font-size: 13px;
+  color: #4f46e5;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.btn-add {
+  padding: 10px 20px;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s;
+  align-self: flex-start;
+}
+
+.btn-add:hover {
+  background: #4338ca;
+}
+
+/* 목록 */
+.empty {
+  text-align: center;
+  color: #aaa;
+  font-size: 15px;
+  padding: 40px 0;
+}
+
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-item {
+  background: #f8f9fc;
+  border: 1.5px solid #e8eaf0;
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.task-item.overdue {
+  border-color: #fca5a5;
+  background: #fff5f5;
+}
+
+.task-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.task-title {
+  font-size: 15px;
+  color: #333;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.overdue-badge {
+  font-size: 11px;
+  background: #fee2e2;
+  color: #dc2626;
+  padding: 2px 7px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.task-dates {
+  font-size: 12px;
+  color: #888;
+}
+
+.task-dates .duration {
+  font-size: 12px;
+  color: #4f46e5;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* 상태 태그 */
+.tag {
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.tag:hover { opacity: 0.8; }
+
+.todo     { background: #e0e7ff; color: #4f46e5; }
+.progress { background: #fef3c7; color: #d97706; }
+.done     { background: #d1fae5; color: #059669; }
+
+.btn-edit {
+  padding: 5px 12px;
+  background: #e0e7ff;
+  color: #4f46e5;
+  border: none;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-edit:hover { opacity: 0.8; }
+
+.btn-delete {
+  padding: 5px 12px;
+  background: #fee2e2;
+  color: #dc2626;
+  border: none;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-delete:hover { opacity: 0.8; }
+
+/* 수정 폼 */
+.edit-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.edit-box input[type='text'],
+.edit-box input[type='datetime-local'] {
+  padding: 7px 10px;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+}
+
+.edit-box input[type='text'] {
+  width: 100%;
+}
+
+.edit-box input:focus {
+  border-color: #4f46e5;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-save {
+  padding: 6px 16px;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-save:hover { background: #4338ca; }
+
+.btn-cancel {
+  padding: 6px 16px;
+  background: #e5e7eb;
+  color: #555;
+  border: none;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn-cancel:hover { background: #d1d5db; }
